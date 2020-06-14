@@ -13,6 +13,7 @@ import com.yuan.fastec.latte.app.latte;
 import com.yuan.fastec.latte.delegates.LatteDelegate;
 import com.yuan.fastec.latte.ec.launcher.LauncherDelegate;
 import com.yuan.fastec.latte.ec.launcher.LauncherScrollDelegate;
+import com.yuan.fastec.latte.ec.main.EcBottomDelegate;
 import com.yuan.fastec.latte.ec.sign.ISignListener;
 import com.yuan.fastec.latte.ec.sign.SignInDelegate;
 import com.yuan.fastec.latte.ec.sign.SignUpDelegate;
@@ -55,7 +56,7 @@ public class MainActivity extends ProxyActivity implements ISignListener, ILaunc
                 // 已经登录
                 Toast.makeText(this, "启动结束，登录了", Toast.LENGTH_SHORT).show();
                 // 登录了，进入主页
-                startWithPop(new ExampleDelegate());
+                startWithPop(new EcBottomDelegate());
                 break;
             case NOT_SIGNED:
                 // 未登录
