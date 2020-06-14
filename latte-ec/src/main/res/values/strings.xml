@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">latteEC</string>
+    <string name="sign_up_toolbar">注册</string>
+    <string name="sign_in_toolbar">登录</string>
+</resources>

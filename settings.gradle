@@ -1,0 +1,2 @@
+include ':example', ':latte-annotations', ':latte-complier', ':latte-core', ':latte-ec'
+rootProject.name='FastEC'
