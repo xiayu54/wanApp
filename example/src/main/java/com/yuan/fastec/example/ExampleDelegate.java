@@ -14,6 +14,7 @@ import com.yuan.fastec.latte.net.callback.IError;
 import com.yuan.fastec.latte.net.callback.IFailure;
 import com.yuan.fastec.latte.net.callback.ISuccess;
 import com.yuan.fastec.latte.ui.LoaderStyle;
+import com.yuan.fastec.latte.util.log.LatteLogger;
 
 import java.util.WeakHashMap;
 
@@ -37,17 +38,18 @@ public class ExampleDelegate extends LatteDelegate {
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
-//        testRxRestClient2();
+        testRestClient();
     }
 
     private void testRestClient(){
         RestClient.Builder()
-                .url("/")
+                .url("app/home_data_test1.json")
 //                .loder(getContext())
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
                         Toast.makeText(getContext(), response, Toast.LENGTH_SHORT).show();
+                        LatteLogger.json("TAG", response);
                     }
                 })
                 .failure(new IFailure() {

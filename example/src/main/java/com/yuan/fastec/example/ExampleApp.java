@@ -23,6 +23,7 @@ public class ExampleApp extends Application {
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcModule())
                 .withApiHost("https://www.wanandroid.com/")
+//                .withApiHost("http://192.168.43.231:8080/") // 本机
 //                .withInterceptor(new DebugInterceptor("index", R.raw.test))
                 .configure();
         // log 初始化
