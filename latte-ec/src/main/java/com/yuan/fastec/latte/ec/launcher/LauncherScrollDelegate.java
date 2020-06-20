@@ -96,4 +96,9 @@ public class LauncherScrollDelegate extends LatteDelegate implements OnItemClick
             });
         }
     }
+
+    @Override
+    public void post(Runnable runnable) {
+
+    }
 }

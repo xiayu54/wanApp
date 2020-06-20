@@ -105,4 +105,9 @@ public class ContentDelegate extends LatteDelegate {
                     }
                 });
     }
+
+    @Override
+    public void post(Runnable runnable) {
+
+    }
 }

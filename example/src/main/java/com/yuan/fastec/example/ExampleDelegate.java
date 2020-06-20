@@ -126,4 +126,9 @@ public class ExampleDelegate extends LatteDelegate {
                     }
                 });
     }
+
+    @Override
+    public void post(Runnable runnable) {
+
+    }
 }

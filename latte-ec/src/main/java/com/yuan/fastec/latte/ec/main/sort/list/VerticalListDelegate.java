@@ -51,6 +51,11 @@ public class VerticalListDelegate extends LatteDelegate {
     }
 
     @Override
+    public void post(Runnable runnable) {
+
+    }
+
+    @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
         // 数据懒加载

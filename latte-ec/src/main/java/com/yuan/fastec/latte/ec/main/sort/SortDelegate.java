@@ -27,12 +27,17 @@ public class SortDelegate extends BottomItemDelegate {
     }
 
     @Override
+    public void post(Runnable runnable) {
+
+    }
+
+    @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
         // 点击的时候才加载，实现懒加载，放在bindView的话，一进入 app 就会加载
         final VerticalListDelegate listDelegate = new VerticalListDelegate();
-        loadRootFragment(R.id.vertical_list_container, listDelegate);
+        getSupportDelegate().loadRootFragment(R.id.vertical_list_container, listDelegate);
         // 设置 右侧第一分类显示，默认显示一
-        loadRootFragment(R.id.sort_content_container, ContentDelegate.newInstance(1),false, true);
+        getSupportDelegate().loadRootFragment(R.id.sort_content_container, ContentDelegate.newInstance(1),false, true);
     }
 }

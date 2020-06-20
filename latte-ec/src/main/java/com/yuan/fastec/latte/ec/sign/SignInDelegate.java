@@ -113,11 +113,16 @@ public class SignInDelegate extends LatteDelegate {
     @OnClick(R2.id.tv_link_sign_up)
     void onClickLinkSignUp(){
         // 还未注册，去注册
-        start(new SignUpDelegate());
+        getSupportDelegate().start(new SignUpDelegate());
     }
 
     @OnClick(R2.id.icon_sign_in_wechat)
     void onClickWeChat(){
+
+    }
+
+    @Override
+    public void post(Runnable runnable) {
 
     }
 }

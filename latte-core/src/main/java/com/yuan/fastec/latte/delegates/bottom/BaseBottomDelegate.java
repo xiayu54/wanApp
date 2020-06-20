@@ -21,6 +21,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import butterknife.BindView;
+import me.yokeyword.fragmentation.ISupportFragment;
 import me.yokeyword.fragmentation.SupportFragment;
 
 /**
@@ -118,8 +119,8 @@ public abstract class BaseBottomDelegate extends LatteDelegate implements View.O
             }
         }
         // 把我们加入的 fragment，转化为数组，保证原子性
-        final SupportFragment[] delegateArray = (SupportFragment[]) ITEM_DELEGATE.toArray(new SupportFragment[size]);
-        loadMultipleRootFragment(R.id.bottom_bar_delegate_container, mIndexDelegate, delegateArray);
+        final ISupportFragment[] delegateArray = ITEM_DELEGATE.toArray(new ISupportFragment[size]);
+        getSupportDelegate().loadMultipleRootFragment(R.id.bottom_bar_delegate_container, mIndexDelegate, delegateArray);
     }
 
     /**
@@ -148,7 +149,7 @@ public abstract class BaseBottomDelegate extends LatteDelegate implements View.O
         itemTitle.setTextColor(mClickColor);
         // 第一个是需要显示的，第二个是需要隐藏的
         // 一直隐藏上一个
-        showHideFragment(ITEM_DELEGATE.get(tag), ITEM_DELEGATE.get(mCurrentDelegate));
+        getSupportDelegate().showHideFragment(ITEM_DELEGATE.get(tag), ITEM_DELEGATE.get(mCurrentDelegate));
         // 一定要注意先后顺序
         mCurrentDelegate = tag;
     }

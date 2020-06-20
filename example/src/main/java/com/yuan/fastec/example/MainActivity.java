@@ -59,16 +59,21 @@ public class MainActivity extends ProxyActivity implements ISignListener, ILaunc
                 // 已经登录
                 Toast.makeText(this, "启动结束，登录了", Toast.LENGTH_SHORT).show();
                 // 登录了，进入主页
-                startWithPop(new EcBottomDelegate());
+                getSupportDelegate().startWithPop(new EcBottomDelegate());
                 break;
             case NOT_SIGNED:
                 // 未登录
                 Toast.makeText(this, "启动结束，用户未登录", Toast.LENGTH_SHORT).show();
                 // 启动后将栈中删一个元素彻底清除，引导页看一下，就没用了
-                startWithPop(new SignUpDelegate());
+                getSupportDelegate().startWithPop(new SignUpDelegate());
                 break;
             default:
                 break;
         }
+    }
+
+    @Override
+    public void post(Runnable runnable) {
+
     }
 }
