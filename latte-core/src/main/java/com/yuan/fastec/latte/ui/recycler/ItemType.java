@@ -29,4 +29,9 @@ public class ItemType {
      * 分类菜单
      */
     public static final int VERTICAL_MENU_LIST = 5;
+
+    /**
+     * 单独大图
+     */
+    public static final int SINGLE_BIG_IMAGE = 6;
 }

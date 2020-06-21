@@ -66,6 +66,7 @@ public class IndexDataConverter extends DataConverter {
                     .setField(MultipleFields.TEXT, text)
                     .setField(MultipleFields.IMAGER_URL, imageUrl)
                     .setField(MultipleFields.BANNERS, bannerImages)
+                    .setField(MultipleFields.ID, i)
                     .build();
 
             ENTITIES.add(entity);

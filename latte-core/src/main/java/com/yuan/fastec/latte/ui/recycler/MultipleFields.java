@@ -13,5 +13,6 @@ public enum MultipleFields {
     BANNERS,
     ID,
     NAME,
-    TAG
+    TAG,
+    TITLE
 }

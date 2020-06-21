@@ -12,11 +12,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.gyf.barlibrary.ImmersionBar;
 import com.joanzapata.iconify.widget.IconTextView;
 import com.yuan.fastec.latte.delegates.bottom.BottomItemDelegate;
 import com.yuan.fastec.latte.ec.R;
 import com.yuan.fastec.latte.ec.R2;
+import com.yuan.fastec.latte.ec.main.EcBottomDelegate;
 import com.yuan.fastec.latte.net.Rx.RxRestClient;
 import com.yuan.fastec.latte.ui.recycler.MultipleFields;
 import com.yuan.fastec.latte.ui.recycler.MultipleItemEntity;
@@ -111,6 +111,10 @@ public class IndexDelegate extends BottomItemDelegate {
         final GridLayoutManager manager = new GridLayoutManager(getContext(), 4);
         mRecyclerView.setLayoutManager(manager);
         mRecyclerView.addItemDecoration(BaseDecoration.create(ContextCompat.getColor(getContext(), R.color.app_background), 8));
+        // item 点击事件
+        // 先获取 父级元素
+        final EcBottomDelegate ecBottomDelegate = getParentDelegate();
+        mRecyclerView.addOnItemTouchListener(IndexItemClickListener.create(ecBottomDelegate));
     }
 
     @Override

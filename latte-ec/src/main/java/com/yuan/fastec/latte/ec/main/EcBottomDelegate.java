@@ -8,6 +8,7 @@ import com.yuan.fastec.latte.delegates.bottom.BottomTabBean;
 import com.yuan.fastec.latte.delegates.bottom.ItemBuilder;
 import com.yuan.fastec.latte.ec.main.cart.ShopCartDelegate;
 import com.yuan.fastec.latte.ec.main.index.IndexDelegate;
+import com.yuan.fastec.latte.ec.main.person.PersonalDelegate;
 import com.yuan.fastec.latte.ec.main.sort.SortDelegate;
 
 import java.util.LinkedHashMap;
@@ -27,7 +28,7 @@ public class EcBottomDelegate extends BaseBottomDelegate {
 //        items.put(new BottomTabBean("{fa-compass}", "发现"), new IndexDelegate());
         items.put(new BottomTabBean("{fa-plus-circle}", "发布"), new IndexDelegate());
         items.put(new BottomTabBean("{fa-shopping-cart}", "购物车"), new ShopCartDelegate());
-        items.put(new BottomTabBean("{fa-user}", "我的"), new IndexDelegate());
+        items.put(new BottomTabBean("{fa-user}", "我的"), new PersonalDelegate());
         return builder.addItems(items).build();
     }
 

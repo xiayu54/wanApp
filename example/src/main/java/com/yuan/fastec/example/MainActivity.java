@@ -8,7 +8,6 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 
-import com.gyf.barlibrary.ImmersionBar;
 import com.yuan.fastec.latte.activities.ProxyActivity;
 import com.yuan.fastec.latte.app.latte;
 import com.yuan.fastec.latte.delegates.LatteDelegate;

@@ -53,6 +53,8 @@ public class ShopCartDelegate extends BottomItemDelegate implements ICartItemLis
     // 总共的 item 的数量
     private int mTotalCount = 0;
     private double mTotalPrice = 0.00;
+    // ViewStub 是否已经加载
+    private boolean mIsInflated =  false;
 
 
     @OnClick(R2.id.icon_cart_select_all)
@@ -130,14 +132,17 @@ public class ShopCartDelegate extends BottomItemDelegate implements ICartItemLis
         final int count = mCartAdapter.getItemCount();
         if (count == 0){
             // 购物车内没有商品时，新建一个 layout，这个时候，就用到了 viewStub
-            final View stubView = mStubNoItem.inflate();
-            final AppCompatTextView tvToBuy = stubView.findViewById(R.id.tv_stub_to_buy);
-            tvToBuy.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getContext(), "该购物啦", Toast.LENGTH_SHORT).show();
-                }
-            });
+            if (!mIsInflated){
+                // 只有未加载 ViewStub，才去 inflate
+                final View stubView = mStubNoItem.inflate();
+                final AppCompatTextView tvToBuy = stubView.findViewById(R.id.tv_stub_to_buy);
+                tvToBuy.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getContext(), "该购物啦", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
             mRecyclerView.setVisibility(View.GONE);
         }else {
             mRecyclerView.setVisibility(View.VISIBLE);
@@ -155,6 +160,12 @@ public class ShopCartDelegate extends BottomItemDelegate implements ICartItemLis
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
         // 初始化 tag
         mIconSelectAll.setTag(0);
+        mStubNoItem.setOnInflateListener(new ViewStub.OnInflateListener() {
+            @Override
+            public void onInflate(ViewStub stub, View inflated) {
+                mIsInflated = true;
+            }
+        });
     }
 
     @Override

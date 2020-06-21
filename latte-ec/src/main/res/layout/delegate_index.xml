@@ -25,18 +25,20 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <com.joanzapata.iconify.widget.IconTextView
                 android:id="@+id/icon_index_scan"
                 android:layout_width="0dp"
-                android:layout_height="80dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                android:layout_gravity="left"
+                android:layout_gravity="left|center"
                 android:paddingRight="10dp"
                 android:textColor="@android:color/white"
                 android:textSize="25sp"
-                android:text="{icon-scan}"/>
+                android:text="{icon-scan}"
+                android:visibility="visible"/>
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/et_search"
                 android:layout_width="0dp"
@@ -46,17 +48,19 @@
                 android:background="@android:color/white"
                 android:gravity="center_vertical"
                 android:hint="@string/index_search_edit_hint"
-                android:paddingLeft="20dp" />
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
             <com.joanzapata.iconify.widget.IconTextView
                 android:id="@+id/icon_index_message"
                 android:layout_width="0dp"
-                android:layout_height="80dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                android:layout_gravity="right"
+                android:layout_gravity="right|center"
                 android:paddingLeft="10dp"
                 android:textColor="@android:color/white"
                 android:textSize="25sp"
-                android:text="{fa-bullhorn}"/>
+                android:text="{fa-bullhorn}"
+                android:visibility="visible"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
