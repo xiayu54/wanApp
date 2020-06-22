@@ -15,6 +15,7 @@ import com.yuan.fastec.latte.ec.main.person.list.ListAdapter;
 import com.yuan.fastec.latte.ec.main.person.list.ListBean;
 import com.yuan.fastec.latte.ec.main.person.list.ListItemType;
 import com.yuan.fastec.latte.ec.main.person.order.OrderDelegate;
+import com.yuan.fastec.latte.ec.main.person.profile.UserProfileDelegate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +40,11 @@ public class PersonalDelegate extends BottomItemDelegate {
     void onClickAllOrder(){
         mArgs.putString(ORDER_TYPE, "all");
         startOrderListByType();
+    }
+
+    @OnClick(R2.id.img_user_avatar)
+    void onClickAvatar(){
+        getParentDelegate().getSupportDelegate().start(new UserProfileDelegate());
     }
 
     private void startOrderListByType(){

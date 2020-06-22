@@ -62,6 +62,9 @@ public class ListBean implements MultiItemEntity {
     }
 
     public LatteDelegate getDelegate() {
+        if (mDelegate == null){
+            return null;
+        }
         return mDelegate;
     }
 
